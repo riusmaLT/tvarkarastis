@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Schedule Table with Flippable Cards</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  th {
+    background-color: gray;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 2px;
+    border: 1px solid #ddd;
+    text-align: center;
+    height: 80px;
+    vertical-align: middle;
+    background-color: #fff;
+  }
+  th, td {
+  width: calc(100% / 6); /* since you have 6 columns */
+}
+th:first-child, td:first-child {
+  width: calc(100% / 10); /* for example, half the width of others */
+}
+
+  /* Style for card container */
+  .card-container {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Flippable card styles */
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+	border-radius: 10px; /* or whatever radius you want */
+  transition: 0.4s ease;
+  }
+
+  /* When flipped */
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  /* Front and back styles */
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    font-size: clamp(10px, 2vw, 15px);
+  }
+
+  .card-front {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .card-back {
+    background-color: #333;
+    color: #fff;
+    transform: rotateY(180deg);
+  }
+
+  /* Optional: hover effect for cards */
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+	
+  }
+  .card-front:hover{
+	background-color: #2E7E2F;
+	  transition: background-color 0.4s ease;
+  }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center; margin-bottom:20px;">Matematikos pamokų tvarkaraštis</h2>
+<h2 style="text-align:center; margin-bottom:20px;">Marius Davidavičius</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Pr</th>
+      <th>An</th>
+      <th>Tr</th>
+      <th>Ket</th>
+      <th>Pn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Row 1 -->
+    <tr>
+      <td>14h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Row 2 -->
+    <tr>
+      <td>15h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Row 3 -->
+    <tr>
+      <td>16h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Row 4 -->
+    <tr>
+      <td>17h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Row 5 -->
+    <tr>
+      <td>18h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Row 6 -->
+    <tr>
+      <td>19h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Row 7 -->
+    <tr>
+      <td>20h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Additional rows if needed -->
+  </tbody>
+</table>
+<br/>
+
+
+
+<script>
+  // Function to create a card with front and back texts
+  function createCard(frontText, backText) {
+    const container = document.createElement('div');
+    container.className = 'card-container';
+
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    // Front face
+    const front = document.createElement('div');
+    front.className = 'card-face card-front';
+    front.innerText = frontText;
+
+    // Back face
+    const back = document.createElement('div');
+    back.className = 'card-face card-back';
+    back.innerText = backText;
+
+    // Append faces to card
+    card.appendChild(front);
+    card.appendChild(back);
+
+    // Add flip on click
+    card.onclick = () => {
+      card.classList.toggle('flipped');
+    };
+
+    container.appendChild(card);
+    return container;
+  }
+
+  // Example: Paste your preset cards here by calling createCard()
+  // For demonstration, we'll add some sample cards into specific cells
+  document.addEventListener('DOMContentLoaded', () => {
+    // Pirmadienis
+    const cell_14_monday = document.querySelector('tbody tr:nth-child(1) td:nth-child(2)');
+    cell_14_monday.appendChild(createCard('Pirmadienis 14:00', 'Statybininkų g. 7 +37064500157'));
+	
+	const cell_15_monday = document.querySelector('tbody tr:nth-child(2) td:nth-child(2)');
+    cell_15_monday.appendChild(createCard('Pirmadienis 15:00', 'Statybininkų g. 7 +37064500157'));
+	
+	const cell_16_monday = document.querySelector('tbody tr:nth-child(3) td:nth-child(2)');
+    cell_16_monday.appendChild(createCard('Pirmadienis 16:00', 'Statybininkų g. 7 +37064500157'));
+
+	const cell_18_monday = document.querySelector('tbody tr:nth-child(5) td:nth-child(2)');
+    cell_18_monday.appendChild(createCard('Pirmadienis 18:00', 'Statybininkų g. 7 +37064500157'));
+
+const cell_20_monday = document.querySelector('tbody tr:nth-child(7) td:nth-child(2)');
+    cell_20_monday.appendChild(createCard('Pirmadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+// Antradienis
+const cell_14_tuesday = document.querySelector('tbody tr:nth-child(1) td:nth-child(3)');
+    cell_14_tuesday.appendChild(createCard('Antradienis 14:00', 'Statybininkų g. 7 +37064500157'));
+	const cell_17_tuesday = document.querySelector('tbody tr:nth-child(4) td:nth-child(3)');
+    cell_17_tuesday.appendChild(createCard('Antradienis 17:00', 'Statybininkų g. 7 +37064500157'));
+	const cell_20_tuesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(3)');
+    cell_20_tuesday.appendChild(createCard('Antradienis 20:00', 'Statybininkų g. 7 +37064500157'));
+// Trečiadienis
+	const cell_14_wednesday = document.querySelector('tbody tr:nth-child(1) td:nth-child(4)');
+    cell_14_wednesday.appendChild(createCard('Trečiadienis 14:00', 'Statybininkų g. 7 +37064500157'));
+	const cell_20_wednesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(4)');
+    cell_20_wednesday.appendChild(createCard('Trečiadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+//Ketvirtadienis
+	const cell_14_thursday = document.querySelector('tbody tr:nth-child(1) td:nth-child(5)');
+    cell_14_thursday.appendChild(createCard('Ketvirtadienis 14:00', 'Statybininkų g. 7 +37064500157'));
+		const cell_15_thursday = document.querySelector('tbody tr:nth-child(2) td:nth-child(5)');
+    cell_15_thursday.appendChild(createCard('Ketvirtadienis 15:00', 'Statybininkų g. 7 +37064500157'));
+		const cell_17_thursday = document.querySelector('tbody tr:nth-child(4) td:nth-child(5)');
+    cell_17_thursday.appendChild(createCard('Ketvirtadienis 17:00', 'Statybininkų g. 7 +37064500157'));
+	const cell_20_thursday = document.querySelector('tbody tr:nth-child(7) td:nth-child(5)');
+    cell_20_thursday.appendChild(createCard('Ketvirtadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+//Penktadienis
+const cell_14_friday = document.querySelector('tbody tr:nth-child(1) td:nth-child(6)');
+    cell_14_friday.appendChild(createCard('Penktadienis 14:00', 'Statybininkų g. 7 +37064500157'));
+	const cell_15_friday = document.querySelector('tbody tr:nth-child(4) td:nth-child(6)');
+    cell_15_friday.appendChild(createCard('Penktadienis 17:00', 'Statybininkų g. 7 +37064500157'));
+	const cell_16_friday = document.querySelector('tbody tr:nth-child(5) td:nth-child(6)');
+    cell_16_friday.appendChild(createCard('Penktadienis 18:00', 'Statybininkų g. 7 +37064500157'));
+	const cell_17_friday = document.querySelector('tbody tr:nth-child(6) td:nth-child(6)');
+    cell_17_friday.appendChild(createCard('Penktadienis 19:00', 'Statybininkų g. 7 +37064500157'));
+const cell_20_friday = document.querySelector('tbody tr:nth-child(7) td:nth-child(6)');
+    cell_20_friday.appendChild(createCard('Penktadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+	
+  });
+</script>
+
+</body>
+</html>
