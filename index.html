@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Schedule Table with Flippable Cards</title>
+<title>Tvarkaraštis</title>
 <style>
   body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f2f5;
-    padding: 20px;
+    padding: 10px;
   }
 
   table {
@@ -16,8 +16,8 @@
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
     overflow: hidden;
   }
 
@@ -30,18 +30,31 @@
   }
 
   td {
-    padding: 2px;
-    border: 1px solid #ddd;
+    padding: 1px;
     text-align: center;
     height: 80px;
     vertical-align: middle;
-    background-color: #fff;
+  
   }
   th, td {
   width: calc(100% / 6); /* since you have 6 columns */
 }
 th:first-child, td:first-child {
   width: calc(100% / 10); /* for example, half the width of others */
+}
+
+th:last-child, td:last-child {
+  padding-right: 4px /* for example, half the width of others */
+}
+.lastRow{
+  padding-bottom:4px /* for example, half the width of others */
+}
+tr:nth-child(odd) {
+  background-color: #FFF;
+}
+
+tr:nth-child(even) {
+  background-color: #EEE;
 }
 
   /* Style for card container */
@@ -54,6 +67,7 @@ th:first-child, td:first-child {
 
   /* Flippable card styles */
   .card {
+  border: 2px solid #555;
     width: 100%;
     height: 100%;
     position: relative;
@@ -82,7 +96,7 @@ th:first-child, td:first-child {
     box-sizing: border-box;
     border-radius: 8px;
     font-family: 'Arial', sans-serif;
-    font-size: clamp(10px, 2vw, 15px);
+    font-size: clamp(9px, 2vw, 16px);
   }
 
   .card-front {
@@ -109,8 +123,9 @@ th:first-child, td:first-child {
 </head>
 <body>
 
-<h2 style="text-align:center; margin-bottom:20px;">Matematikos pamokų tvarkaraštis</h2>
-<h2 style="text-align:center; margin-bottom:20px;">Marius Davidavičius</h2>
+<h3 style="text-align:center; margin-bottom:20px;">Matematikos pamokų tvarkaraštis</h3>
+<h3 style="text-align:center; margin-bottom:20px;">Marius Davidavičius</h3>
+<h3 style="text-align:center; margin-bottom:20px;">+37064500157</h3>
 
 <table>
   <thead>
@@ -180,12 +195,12 @@ th:first-child, td:first-child {
     </tr>
     <!-- Row 7 -->
     <tr>
-      <td>20h</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td  class="lastRow">20h</td>
+      <td  class="lastRow"></td>
+      <td  class="lastRow"></td>
+      <td  class="lastRow"></td>
+      <td  class="lastRow"></td>
+      <td  class="lastRow"></td>
     </tr>
     <!-- Additional rows if needed -->
   </tbody>
@@ -231,51 +246,54 @@ th:first-child, td:first-child {
   document.addEventListener('DOMContentLoaded', () => {
     // Pirmadienis
     const cell_14_monday = document.querySelector('tbody tr:nth-child(1) td:nth-child(2)');
-    cell_14_monday.appendChild(createCard('Pirmadienis 14:00', 'Statybininkų g. 7 +37064500157'));
+    cell_14_monday.appendChild(createCard('Pirmadienis 14:00', 'Kaunas, Statybininkų g. 7'));
 	
 	const cell_15_monday = document.querySelector('tbody tr:nth-child(2) td:nth-child(2)');
-    cell_15_monday.appendChild(createCard('Pirmadienis 15:00', 'Statybininkų g. 7 +37064500157'));
+    cell_15_monday.appendChild(createCard('Pirmadienis 15:00', 'Kaunas, Statybininkų g. 7'));
 	
 	const cell_16_monday = document.querySelector('tbody tr:nth-child(3) td:nth-child(2)');
-    cell_16_monday.appendChild(createCard('Pirmadienis 16:00', 'Statybininkų g. 7 +37064500157'));
+    cell_16_monday.appendChild(createCard('Pirmadienis 16:00', 'Kaunas, Statybininkų g. 7'));
 
 	const cell_18_monday = document.querySelector('tbody tr:nth-child(5) td:nth-child(2)');
-    cell_18_monday.appendChild(createCard('Pirmadienis 18:00', 'Statybininkų g. 7 +37064500157'));
+    cell_18_monday.appendChild(createCard('Pirmadienis 18:00', 'Kaunas, Statybininkų g. 7'));
 
 const cell_20_monday = document.querySelector('tbody tr:nth-child(7) td:nth-child(2)');
-    cell_20_monday.appendChild(createCard('Pirmadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+    cell_20_monday.appendChild(createCard('Pirmadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 // Antradienis
 const cell_14_tuesday = document.querySelector('tbody tr:nth-child(1) td:nth-child(3)');
-    cell_14_tuesday.appendChild(createCard('Antradienis 14:00', 'Statybininkų g. 7 +37064500157'));
+    cell_14_tuesday.appendChild(createCard('Antradienis 14:00', 'Kaunas, Statybininkų g. 7'));
 	const cell_17_tuesday = document.querySelector('tbody tr:nth-child(4) td:nth-child(3)');
-    cell_17_tuesday.appendChild(createCard('Antradienis 17:00', 'Statybininkų g. 7 +37064500157'));
+    cell_17_tuesday.appendChild(createCard('Antradienis 17:00', 'Kaunas, Statybininkų g. 7'));
 	const cell_20_tuesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(3)');
-    cell_20_tuesday.appendChild(createCard('Antradienis 20:00', 'Statybininkų g. 7 +37064500157'));
+    cell_20_tuesday.appendChild(createCard('Antradienis 20:00', 'Kaunas, Statybininkų g. 7'));
 // Trečiadienis
 	const cell_14_wednesday = document.querySelector('tbody tr:nth-child(1) td:nth-child(4)');
-    cell_14_wednesday.appendChild(createCard('Trečiadienis 14:00', 'Statybininkų g. 7 +37064500157'));
+    cell_14_wednesday.appendChild(createCard('Trečiadienis 14:00', 'Kaunas, Statybininkų g. 7'));
+		const cell_16_wednesday = document.querySelector('tbody tr:nth-child(3) td:nth-child(4)');
+    cell_16_wednesday.appendChild(createCard('Trečiadienis 16:00', 'Kaunas, Statybininkų g. 7'));
 	const cell_20_wednesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(4)');
-    cell_20_wednesday.appendChild(createCard('Trečiadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+    cell_20_wednesday.appendChild(createCard('Trečiadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 //Ketvirtadienis
 	const cell_14_thursday = document.querySelector('tbody tr:nth-child(1) td:nth-child(5)');
-    cell_14_thursday.appendChild(createCard('Ketvirtadienis 14:00', 'Statybininkų g. 7 +37064500157'));
+    cell_14_thursday.appendChild(createCard('Ketvirtadienis 14:00', 'Kaunas, Statybininkų g. 7'));
 		const cell_15_thursday = document.querySelector('tbody tr:nth-child(2) td:nth-child(5)');
-    cell_15_thursday.appendChild(createCard('Ketvirtadienis 15:00', 'Statybininkų g. 7 +37064500157'));
-		const cell_17_thursday = document.querySelector('tbody tr:nth-child(4) td:nth-child(5)');
-    cell_17_thursday.appendChild(createCard('Ketvirtadienis 17:00', 'Statybininkų g. 7 +37064500157'));
+    cell_15_thursday.appendChild(createCard('Ketvirtadienis 15:00', 'Kaunas, Statybininkų g. 7'));
+
 	const cell_20_thursday = document.querySelector('tbody tr:nth-child(7) td:nth-child(5)');
-    cell_20_thursday.appendChild(createCard('Ketvirtadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+    cell_20_thursday.appendChild(createCard('Ketvirtadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 //Penktadienis
-const cell_14_friday = document.querySelector('tbody tr:nth-child(1) td:nth-child(6)');
-    cell_14_friday.appendChild(createCard('Penktadienis 14:00', 'Statybininkų g. 7 +37064500157'));
-	const cell_15_friday = document.querySelector('tbody tr:nth-child(4) td:nth-child(6)');
-    cell_15_friday.appendChild(createCard('Penktadienis 17:00', 'Statybininkų g. 7 +37064500157'));
-	const cell_16_friday = document.querySelector('tbody tr:nth-child(5) td:nth-child(6)');
-    cell_16_friday.appendChild(createCard('Penktadienis 18:00', 'Statybininkų g. 7 +37064500157'));
-	const cell_17_friday = document.querySelector('tbody tr:nth-child(6) td:nth-child(6)');
-    cell_17_friday.appendChild(createCard('Penktadienis 19:00', 'Statybininkų g. 7 +37064500157'));
+const cell_15_friday = document.querySelector('tbody tr:nth-child(2) td:nth-child(6)');
+    cell_15_friday.appendChild(createCard('Penktadienis 15:00', 'Kaunas, Statybininkų g. 7'));
+	const cell_16_friday = document.querySelector('tbody tr:nth-child(3) td:nth-child(6)');
+    cell_16_friday.appendChild(createCard('Penktadienis 16:00', 'Kaunas, Statybininkų g. 7'));
+	const cell_17_friday = document.querySelector('tbody tr:nth-child(4) td:nth-child(6)');
+    cell_17_friday.appendChild(createCard('Penktadienis 17:00', 'Kaunas, Statybininkų g. 7'));
+	const cell_18_friday = document.querySelector('tbody tr:nth-child(5) td:nth-child(6)');
+    cell_18_friday.appendChild(createCard('Penktadienis 18:00', 'Kaunas, Statybininkų g. 7'));
+	const cell_19_friday = document.querySelector('tbody tr:nth-child(6) td:nth-child(6)');
+    cell_19_friday.appendChild(createCard('Penktadienis 19:00', 'Kaunas, Statybininkų g. 7'));
 const cell_20_friday = document.querySelector('tbody tr:nth-child(7) td:nth-child(6)');
-    cell_20_friday.appendChild(createCard('Penktadienis 20:00', 'Statybininkų g. 7 +37064500157'));
+    cell_20_friday.appendChild(createCard('Penktadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 	
   });
 </script>
