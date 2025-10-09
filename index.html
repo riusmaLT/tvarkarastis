@@ -245,8 +245,7 @@ tr:nth-child(even) {
   // For demonstration, we'll add some sample cards into specific cells
   document.addEventListener('DOMContentLoaded', () => {
     // Pirmadienis
-    const cell_14_monday = document.querySelector('tbody tr:nth-child(1) td:nth-child(2)');
-    cell_14_monday.appendChild(createCard('Pirmadienis 14:00', 'Kaunas, Statybininkų g. 7'));
+    
 	
 	const cell_15_monday = document.querySelector('tbody tr:nth-child(2) td:nth-child(2)');
     cell_15_monday.appendChild(createCard('Pirmadienis 15:00', 'Kaunas, Statybininkų g. 7'));
@@ -264,6 +263,8 @@ const cell_14_tuesday = document.querySelector('tbody tr:nth-child(1) td:nth-chi
     cell_14_tuesday.appendChild(createCard('Antradienis 14:00', 'Kaunas, Statybininkų g. 7'));
 	const cell_17_tuesday = document.querySelector('tbody tr:nth-child(4) td:nth-child(3)');
     cell_17_tuesday.appendChild(createCard('Antradienis 17:00', 'Kaunas, Statybininkų g. 7'));
+	const cell_19_tuesday = document.querySelector('tbody tr:nth-child(6) td:nth-child(3)');
+    cell_19_tuesday.appendChild(createCard('Antradienis 19:00', 'Kaunas, Statybininkų g. 7'));
 	const cell_20_tuesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(3)');
     cell_20_tuesday.appendChild(createCard('Antradienis 20:00', 'Kaunas, Statybininkų g. 7'));
 // Trečiadienis
@@ -274,8 +275,7 @@ const cell_14_tuesday = document.querySelector('tbody tr:nth-child(1) td:nth-chi
 	const cell_20_wednesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(4)');
     cell_20_wednesday.appendChild(createCard('Trečiadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 //Ketvirtadienis
-	const cell_14_thursday = document.querySelector('tbody tr:nth-child(1) td:nth-child(5)');
-    cell_14_thursday.appendChild(createCard('Ketvirtadienis 14:00', 'Kaunas, Statybininkų g. 7'));
+	
 		const cell_15_thursday = document.querySelector('tbody tr:nth-child(2) td:nth-child(5)');
     cell_15_thursday.appendChild(createCard('Ketvirtadienis 15:00', 'Kaunas, Statybininkų g. 7'));
 
