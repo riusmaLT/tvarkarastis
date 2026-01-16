@@ -355,9 +355,9 @@ tr:nth-child(even) {
   document.addEventListener('DOMContentLoaded', () => {
     // Pirmadienis
  
-//const cell_14_monday = document.querySelector('tbody tr:nth-child(1) td:nth-child(2)');
-    //cell_14_monday.appendChild(createCard('Pirmadienis 14:00', 'Kaunas, Statybininkų g. 7'));
-	//const cell_15_monday = document.querySelector('tbody tr:nth-child(2) td:nth-child(2)');  cell_15_monday.appendChild(createCard('Pirmadienis 15:00', 'Kaunas, Statybininkų g. 7'));
+const cell_14_monday = document.querySelector('tbody tr:nth-child(1) td:nth-child(2)');
+    cell_14_monday.appendChild(createCard('Pirmadienis 14:00', 'Kaunas, Statybininkų g. 7'));
+	const cell_15_monday = document.querySelector('tbody tr:nth-child(2) td:nth-child(2)');  cell_15_monday.appendChild(createCard('Pirmadienis 15:00', 'Kaunas, Statybininkų g. 7'));
    
 	//const cell_16_monday = document.querySelector('tbody tr:nth-child(3) td:nth-child(2)');
     //cell_16_monday.appendChild(createCard('Pirmadienis 16:00', 'Kaunas, Statybininkų g. 7'));
@@ -370,7 +370,7 @@ tr:nth-child(even) {
 //const cell_20_monday = document.querySelector('tbody tr:nth-child(7) td:nth-child(2)');
     //cell_20_monday.appendChild(createCard('Pirmadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 // Antradienis
-//const cell_14_tuesday = document.querySelector('tbody tr:nth-child(1) td:nth-child(3)');    cell_14_tuesday.appendChild(createCard('Antradienis 14:00', 'Kaunas, Statybininkų g. 7'));
+const cell_14_tuesday = document.querySelector('tbody tr:nth-child(1) td:nth-child(3)');    cell_14_tuesday.appendChild(createCard('Antradienis 14:00', 'Kaunas, Statybininkų g. 7'));
 
 //const cell_15_tuesday = document.querySelector('tbody tr:nth-child(2) td:nth-child(3)');
 	//cell_15_tuesday.appendChild(createCard('Antradienis 15:00', 'Kaunas, Statybininkų g. 7'));
@@ -397,7 +397,7 @@ tr:nth-child(even) {
 	//cell_18_wednesday.appendChild(createCard('Trečiadienis 18:00', 'Kaunas, Statybininkų g. 7'));
 	//const cell_19_wednesday = document.querySelector('tbody tr:nth-child(6) td:nth-child(4)');
     //cell_19_wednesday.appendChild(createCard('Trečiadienis 19:00', 'Kaunas, Statybininkų g. 7'));
-	//const cell_20_wednesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(4)');    cell_20_wednesday.appendChild(createCard('Trečiadienis 20:00', 'Kaunas, Statybininkų g. 7'));
+	const cell_20_wednesday = document.querySelector('tbody tr:nth-child(7) td:nth-child(4)');    cell_20_wednesday.appendChild(createCard('Trečiadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 
 //Ketvirtadienis
 		//const cell_14_thursday = document.querySelector('tbody tr:nth-child(1) td:nth-child(5)');
@@ -424,10 +424,10 @@ tr:nth-child(even) {
     //cell_16_friday.appendChild(createCard('Penktadienis 16:00', 'Kaunas, Statybininkų g. 7'));
 	//const cell_17_friday = document.querySelector('tbody tr:nth-child(4) td:nth-child(6)');
     //cell_17_friday.appendChild(createCard('Penktadienis 17:00', 'Kaunas, Statybininkų g. 7'));
-    //const cell_18_friday = document.querySelector('tbody tr:nth-child(5) td:nth-child(6)');
-    //cell_18_friday.appendChild(createCard('Penktadienis 18:00', 'Kaunas, Statybininkų g. 7'));
-	const cell_19_friday = document.querySelector('tbody tr:nth-child(6) td:nth-child(6)');
-    cell_19_friday.appendChild(createCard('Penktadienis 19:00', 'Kaunas, Statybininkų g. 7'));
+    const cell_18_friday = document.querySelector('tbody tr:nth-child(5) td:nth-child(6)');
+    cell_18_friday.appendChild(createCard('Penktadienis 18:00', 'Kaunas, Statybininkų g. 7'));
+	//const cell_19_friday = document.querySelector('tbody tr:nth-child(6) td:nth-child(6)');
+    //cell_19_friday.appendChild(createCard('Penktadienis 19:00', 'Kaunas, Statybininkų g. 7'));
 //const cell_20_friday = document.querySelector('tbody tr:nth-child(7) td:nth-child(6)');
     //cell_20_friday.appendChild(createCard('Penktadienis 20:00', 'Kaunas, Statybininkų g. 7'));
 	
@@ -448,10 +448,10 @@ tr:nth-child(even) {
     //cell_11_saturday.appendChild(createCard2('Šeštadienis 11:00', 'Kaunas, K.Baršausko g. 59'));
 		//const cell_12_saturday = document.querySelectorAll('table.weekend tbody')[0].rows[3].cells[1];
     //cell_12_saturday.appendChild(createCard2('Šeštadienis 12:00', 'Kaunas, K.Baršausko g. 59'));
-		cell_13_saturday = document.querySelectorAll('table.weekend tbody')[0].rows[4].cells[1];
-   cell_13_saturday.appendChild(createCard2('Šeštadienis 13:00', 'Kaunas, K.Baršausko g. 59'));
-		const cell_14_saturday = document.querySelectorAll('table.weekend tbody')[0].rows[5].cells[1];
-    cell_14_saturday.appendChild(createCard2('Šeštadienis 14:00', 'Kaunas, K.Baršausko g. 59'));
+		//cell_13_saturday = document.querySelectorAll('table.weekend tbody')[0].rows[4].cells[1];
+   //cell_13_saturday.appendChild(createCard2('Šeštadienis 13:00', 'Kaunas, K.Baršausko g. 59'));
+		//const cell_14_saturday = document.querySelectorAll('table.weekend tbody')[0].rows[5].cells[1];
+    //cell_14_saturday.appendChild(createCard2('Šeštadienis 14:00', 'Kaunas, K.Baršausko g. 59'));
 		const cell_15_saturday = document.querySelectorAll('table.weekend tbody')[0].rows[6].cells[1];
    cell_15_saturday.appendChild(createCard2('Šeštadienis 15:00', 'Kaunas, K.Baršausko g. 59'));
 		const cell_16_saturday = document.querySelectorAll('table.weekend tbody')[0].rows[7].cells[1];
@@ -464,10 +464,10 @@ tr:nth-child(even) {
 	
 		//const cell_09_sunday = document.querySelectorAll('table.weekend tbody')[0].rows[0].cells[2];
     //cell_09_sunday.appendChild(createCard2('Sekmadienis 09:00', 'Kaunas, K.Baršausko g. 59'));
-		const cell_10_sunday = document.querySelectorAll('table.weekend tbody')[0].rows[1].cells[2];
-    cell_10_sunday.appendChild(createCard2('Sekmadienis 10:00', 'Kaunas, K.Baršausko g. 59'));
-		const cell_11_sunday = document.querySelectorAll('table.weekend tbody')[0].rows[2].cells[2];
-    cell_11_sunday.appendChild(createCard2('Sekmadienis 11:00', 'Kaunas, K.Baršausko g. 59'));
+		//const cell_10_sunday = document.querySelectorAll('table.weekend tbody')[0].rows[1].cells[2];
+    //cell_10_sunday.appendChild(createCard2('Sekmadienis 10:00', 'Kaunas, K.Baršausko g. 59'));
+		//const cell_11_sunday = document.querySelectorAll('table.weekend tbody')[0].rows[2].cells[2];
+    //cell_11_sunday.appendChild(createCard2('Sekmadienis 11:00', 'Kaunas, K.Baršausko g. 59'));
 		const cell_12_sunday = document.querySelectorAll('table.weekend tbody')[0].rows[3].cells[2];
     cell_12_sunday.appendChild(createCard2('Sekmadienis 12:00', 'Kaunas, K.Baršausko g. 59'));
 		//const cell_13_sunday = document.querySelectorAll('table.weekend tbody')[0].rows[4].cells[2];
@@ -489,6 +489,7 @@ tr:nth-child(even) {
 
 </body>
 </html>
+
 
 
 
